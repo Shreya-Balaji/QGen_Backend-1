@@ -1088,6 +1088,10 @@ async def get_job_status_endpoint(job_id: str):
     if not job_info: raise HTTPException(status_code=404, detail="Job not found.")
     return JobStatusResponse(job_id=job_id, **_get_job_status_response_dict(job_id, job_info))
 
+@app.get("/health")
+async def health_check():
+    return {"status": "ok"}
+
 if __name__ == "__main__":
     import uvicorn
     logger.info("Starting Interactive Question Generation API with Uvicorn...")

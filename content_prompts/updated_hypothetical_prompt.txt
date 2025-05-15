@@ -1,0 +1,4 @@
+Your task is to generate precisely 10 sub-topics aligning to the each of the following topics: Breadth First Search, Depth First Search, Shortest Path, graph algorithms ,and ensure their relevance to the Create level of the bloom's taxonomy that matches the standards
+of undergraduate Computer Science examination for the Data Structures and Algorithms course. 
+
+List a detailed set of sub-topics from Breadth First Search, Depth First Search, Shortest Path, graph algorithms, do not generate sample questions. Do not give any other content apart from the sub-topics.

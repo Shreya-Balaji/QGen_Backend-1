@@ -1,0 +1,153 @@
+{
+  "job_id": "f40a5dbd-3942-4b41-8f23-edddfdca962c",
+  "original_filename": "DP__notes.pdf",
+  "parameters": {
+    "academic_level": "Undergraduate",
+    "major": "Computer Science",
+    "course_name": "Data Structures and Algorithms",
+    "taxonomy_level": "Evaluate",
+    "topics_list": "Dynamic Programming , Recursion , Memoization",
+    "retrieval_limit_generation": 15,
+    "similarity_threshold_generation": 0.51,
+    "generate_diagrams": false
+  },
+  "generated_question": "A team is developing a system for optimizing resource allocation in a cloud computing environment.  They are debating between using a purely recursive algorithm, a memoized recursive algorithm, and a dynamic programming approach to solve the optimization problem.  Evaluate the suitability of each approach, considering factors such as the size of the problem instance (number of resources and tasks), the potential for overlapping subproblems, and the importance of finding an optimal solution versus a near-optimal solution within a reasonable timeframe.  Justify your recommendation for the most appropriate algorithm, considering the trade-offs between efficiency and solution quality.",
+  "evaluation_metrics": {
+    "qsts_score": 0.5406293272972107,
+    "qualitative_metrics": {
+      "Understandable": true,
+      "TopicRelated": true,
+      "Grammatical": true,
+      "Clear": true,
+      "Central": true
+    },
+    "llm_answerability": {
+      "is_answerable": true,
+      "reasoning": "The provided text gives a solid foundation for a Computer Science undergraduate to compare and contrast recursive, memoized recursive, and dynamic programming approaches.  The snippets describe the characteristics of dynamic programming (overlapping subproblems, optimal substructure), its advantages over divide-and-conquer, and the steps involved in designing a dynamic programming algorithm.  While the snippets don't explicitly address cloud resource allocation, they equip the student with the conceptual tools to evaluate the suitability of each approach for this problem, considering factors like problem size, overlapping subproblems, and the trade-off between solution optimality and computational time. This aligns with the 'Evaluate' level of Bloom's taxonomy, requiring the student to synthesize information and make reasoned judgments."
+    }
+  },
+  "generation_context_snippets_metadata": [
+    {
+      "text": "## **Difference between Dynamic programming and Divide and Conquer Technique**\n\nDivide & Conquer algorithm partition the problem into disjoint sub problems solve the sub problems recursively and then combine their solution to solve the original problems. Divide & Conquer algorithm can be a **Bottom-up approach** and **Top down approach.**\n\nDynamic Programming is used when the sub problems are not independent, e.g. when they share the same sub problems. In this case, divide and conquer may do more work than necessary, because it solves the same sub problem multiple times. Dynamic Programming solves each sub problems just once and stores the result in a table so that it can be repeatedly retrieved if needed again.\n\nDynamic Programming is a **Bottom-up approach-** we solve all possible small problems and then combine to obtain solutions for bigger problems.\n\nDynamic Programming is a paradigm of algorithm design in which an optimization problem is solved by a combination of achieving sub-problem solutions and appearing to the \"**principle of optimality**\".",
+      "metadata": {
+        "source_file": "DP__notes.pdf",
+        "header_trail": [
+          "**Dynamic Programming**",
+          "**Difference between Dynamic programming and Divide and Conquer Technique**"
+        ],
+        "chunk_index_original_split": 4,
+        "estimated_char_length": 5781,
+        "estimated_word_count": 164,
+        "sub_chunk_id": 4,
+        "final_chunk_index": 4,
+        "document_id": "doc_f40a5dbd-3942-4b41-8f23-edddfdca962c_DP__notes",
+        "session_id": "f40a5dbd-3942-4b41-8f23-edddfdca962c"
+      }
+    },
+    {
+      "text": "### **Elements of Dynamic Programming**\n\nThere are basically three elements that characterize a dynamic programming algorithm:-\n\n- 1. **Substructure:** Decompose the given problem into smaller sub problems. Express the solution of the original problem in terms of the solution for smaller problems.\n- 2. **Table Structure:** After solving the sub-problems, store the results to the sub problems in a table. This is done because sub problem solutions are reused many times, and we do not want to repeatedly solve the same problem over and over again.\n- 3. **Bottom-up Computation:** Using table, combine the solution of smaller sub problems to solve larger sub problems and eventually arrives at a solution to complete problem.",
+      "metadata": {
+        "source_file": "DP__notes.pdf",
+        "header_trail": [
+          "**Dynamic Programming**",
+          "**Difference between Dynamic programming and Divide and Conquer Technique**",
+          "**Elements of Dynamic Programming**"
+        ],
+        "chunk_index_original_split": 5,
+        "estimated_char_length": 726,
+        "estimated_word_count": 113,
+        "final_chunk_index": 6,
+        "document_id": "doc_f40a5dbd-3942-4b41-8f23-edddfdca962c_DP__notes",
+        "session_id": "f40a5dbd-3942-4b41-8f23-edddfdca962c"
+      }
+    }
+  ],
+  "answerability_context_snippets_metadata": [
+    {
+      "text": "#### **Applications of dynamic programming**\n\n- **1. 0/1 knapsack problem**\n- **2. All pair Shortest path problem**\n- 3. Reliability design problem\n- **4. Longest common subsequence (LCS)**\n- 5. Flight control and robotics control\n- 6. Time-sharing: It schedules the job to maximize CPU usage",
+      "metadata": {
+        "source_file": "DP__notes.pdf",
+        "header_trail": [
+          "**Dynamic Programming**",
+          "**Difference between Dynamic programming and Divide and Conquer Technique**",
+          "**Components of Dynamic programming**",
+          "**Applications of dynamic programming**"
+        ],
+        "chunk_index_original_split": 7,
+        "estimated_char_length": 292,
+        "estimated_word_count": 46,
+        "final_chunk_index": 8,
+        "document_id": "doc_f40a5dbd-3942-4b41-8f23-edddfdca962c_DP__notes",
+        "session_id": "f40a5dbd-3942-4b41-8f23-edddfdca962c"
+      }
+    },
+    {
+      "text": "## **Difference between Dynamic programming and Divide and Conquer Technique**\n\nDivide & Conquer algorithm partition the problem into disjoint sub problems solve the sub problems recursively and then combine their solution to solve the original problems. Divide & Conquer algorithm can be a **Bottom-up approach** and **Top down approach.**\n\nDynamic Programming is used when the sub problems are not independent, e.g. when they share the same sub problems. In this case, divide and conquer may do more work than necessary, because it solves the same sub problem multiple times. Dynamic Programming solves each sub problems just once and stores the result in a table so that it can be repeatedly retrieved if needed again.\n\nDynamic Programming is a **Bottom-up approach-** we solve all possible small problems and then combine to obtain solutions for bigger problems.\n\nDynamic Programming is a paradigm of algorithm design in which an optimization problem is solved by a combination of achieving sub-problem solutions and appearing to the \"**principle of optimality**\".",
+      "metadata": {
+        "source_file": "DP__notes.pdf",
+        "header_trail": [
+          "**Dynamic Programming**",
+          "**Difference between Dynamic programming and Divide and Conquer Technique**"
+        ],
+        "chunk_index_original_split": 4,
+        "estimated_char_length": 5781,
+        "estimated_word_count": 164,
+        "sub_chunk_id": 4,
+        "final_chunk_index": 4,
+        "document_id": "doc_f40a5dbd-3942-4b41-8f23-edddfdca962c_DP__notes",
+        "session_id": "f40a5dbd-3942-4b41-8f23-edddfdca962c"
+      }
+    },
+    {
+      "text": "# **Dynamic Programming**\n\nDynamic Programming is also used in optimization problems. Like divide-and-conquer method, Dynamic Programming solves problems by combining the solutions of sub problems. Moreover, Dynamic Programming algorithm solves each sub-problem just once and then saves its answer in a table, thereby avoiding the work of re-computing the answer every time. Two main properties of a problem suggest that the given problem can be solved using Dynamic Programming. These properties are **overlapping sub-problems and optimal substructure**.",
+      "metadata": {
+        "source_file": "DP__notes.pdf",
+        "header_trail": [
+          "**Dynamic Programming**"
+        ],
+        "chunk_index_original_split": 0,
+        "estimated_char_length": 555,
+        "estimated_word_count": 77,
+        "final_chunk_index": 0,
+        "document_id": "doc_f40a5dbd-3942-4b41-8f23-edddfdca962c_DP__notes",
+        "session_id": "f40a5dbd-3942-4b41-8f23-edddfdca962c"
+      }
+    },
+    {
+      "text": "### **Elements of Dynamic Programming**\n\nThere are basically three elements that characterize a dynamic programming algorithm:-\n\n- 1. **Substructure:** Decompose the given problem into smaller sub problems. Express the solution of the original problem in terms of the solution for smaller problems.\n- 2. **Table Structure:** After solving the sub-problems, store the results to the sub problems in a table. This is done because sub problem solutions are reused many times, and we do not want to repeatedly solve the same problem over and over again.\n- 3. **Bottom-up Computation:** Using table, combine the solution of smaller sub problems to solve larger sub problems and eventually arrives at a solution to complete problem.",
+      "metadata": {
+        "source_file": "DP__notes.pdf",
+        "header_trail": [
+          "**Dynamic Programming**",
+          "**Difference between Dynamic programming and Divide and Conquer Technique**",
+          "**Elements of Dynamic Programming**"
+        ],
+        "chunk_index_original_split": 5,
+        "estimated_char_length": 726,
+        "estimated_word_count": 113,
+        "final_chunk_index": 6,
+        "document_id": "doc_f40a5dbd-3942-4b41-8f23-edddfdca962c_DP__notes",
+        "session_id": "f40a5dbd-3942-4b41-8f23-edddfdca962c"
+      }
+    },
+    {
+      "text": "### **Steps of Dynamic Programming Approach**\n\nDynamic Programming algorithm is designed using the following four steps \u2212\n\n- 1. Characterize the structure of an optimal solution.\n- 2. Recursively define the value of an optimal solution.\n- 3. Compute the value of an optimal solution, typically in a bottom-up fashion.\n- 4. Construct an optimal solution from the computed information.",
+      "metadata": {
+        "source_file": "DP__notes.pdf",
+        "header_trail": [
+          "**Dynamic Programming**",
+          "**Overlapping Sub-Problems**",
+          "**Steps of Dynamic Programming Approach**"
+        ],
+        "chunk_index_original_split": 3,
+        "estimated_char_length": 383,
+        "estimated_word_count": 60,
+        "final_chunk_index": 3,
+        "document_id": "doc_f40a5dbd-3942-4b41-8f23-edddfdca962c_DP__notes",
+        "session_id": "f40a5dbd-3942-4b41-8f23-edddfdca962c"
+      }
+    }
+  ],
+  "processed_markdown_path_relative": "job_data\\f40a5dbd-3942-4b41-8f23-edddfdca962c\\f40a5dbd-3942-4b41-8f23-edddfdca962c_DP__notes_processed.md",
+  "processed_markdown_filename_on_server": "f40a5dbd-3942-4b41-8f23-edddfdca962c_DP__notes_processed.md"
+}

@@ -1,0 +1,10 @@
+You are an experienced instructor for {academic_level} {major} students for the course {course_name}.
+Your task is to generate {num_questions} questions aligning to a {taxonomy} level of the Bloom's taxonomy for the following topics : {topics_list}.
+
+Please find the explanation of each level of the Bloom's taxonomy:
+Remember: retrieve, recall, or recognize relevant knowledge from long-term memory 
+Understand:demonstrate comprehension through one or more forms of explanation 
+Apply: use information or a skill in a new situation
+Analyze: break material into its constituent parts and determine how the parts relate to one another and/or to an overall structure or purpose
+Evaluate: make judgments based on criteria and standards
+Create: put elements together to form a new coherent or functional whole; reorganize elements into a new pattern or structure

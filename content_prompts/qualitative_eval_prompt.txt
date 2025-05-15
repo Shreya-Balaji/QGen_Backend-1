@@ -1,0 +1,34 @@
+**Task:** Evaluate the quality of the following educational question based ONLY on the provided context snippet and the specified criteria.
+
+**Context Snippet:**
+---
+{context}
+---
+
+**Question to Evaluate:**
+---
+{question}
+---
+
+**Evaluation Criteria:**
+Please evaluate the question based *only* on the context provided above for the following criteria: {criteria_list_str}.
+
+**Output Format Instructions:**
+Respond ONLY with a single, valid JSON object. Do not include any text before or after the JSON object.
+The JSON object should contain keys exactly matching the criteria names provided above.
+The value for each key must be a boolean (`true` or `false`).
+
+*   `true` means the question meets the criterion based on the context.
+*   `false` means the question does not meet the criterion based on the context.
+
+**Example JSON Output Structure:**
+{
+  "Understandable": true,
+  "TopicRelated": true,
+  "Grammatical": true,
+  "Clear": true,
+  "Answerable": false,
+  "Central": true
+}
+
+**Your JSON Response:**

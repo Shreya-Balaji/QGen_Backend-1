@@ -1,0 +1,164 @@
+{
+  "job_id": "24946094-dd7f-421d-9936-f0900d382baf",
+  "original_filename": "Graph Algorithms.pdf",
+  "parameters": {
+    "academic_level": "Undergraduate",
+    "major": "Computer Science",
+    "course_name": "Data Structures and Algorithms",
+    "taxonomy_level": "Evaluate",
+    "topics_list": "Graph Theory , Breadth first search , Depth first search",
+    "retrieval_limit_generation": 15,
+    "similarity_threshold_generation": 0.5,
+    "generate_diagrams": false
+  },
+  "generated_question": "A researcher is developing a recommendation system that uses a graph to represent users and their preferences for items.  The system needs to efficiently find users with similar preferences.  The researcher is considering using either Breadth-First Search (BFS) or Depth-First Search (DFS) to explore the graph.  Critically evaluate the suitability of each algorithm for this task, considering factors such as the structure of the user preference graph (likely to be sparse and potentially very large), the desired properties of the recommendations (e.g., finding close neighbors vs. exploring diverse connections), and the computational cost of each algorithm.  Justify your choice of which algorithm is better suited for this application and explain why the other algorithm would be less effective.",
+  "evaluation_metrics": {
+    "qsts_score": 0.5158010125160217,
+    "qualitative_metrics": {
+      "Understandable": true,
+      "TopicRelated": true,
+      "Grammatical": true,
+      "Clear": true,
+      "Central": true
+    },
+    "llm_answerability": {
+      "is_answerable": false,
+      "reasoning": "The provided text gives basic definitions of BFS and DFS, but lacks the crucial information needed for a comprehensive evaluation at the 'Evaluate' Bloom's level.  The question requires comparing the algorithms' suitability for a specific application (recommendation system on a sparse, large graph), considering factors like computational cost, graph structure, and desired recommendation properties. The snippets offer no details on the computational complexities of BFS and DFS in relation to sparse graphs or the implications for finding 'close neighbors' versus 'diverse connections' in a recommendation context.  A Computer Science undergraduate should know the basics of BFS and DFS, but the context fails to provide the necessary analytical foundation to answer the question appropriately."
+    },
+    "generation_status_message": "Failed to meet all critical criteria after 3 attempts. Displaying last attempt's results."
+  },
+  "generation_context_snippets_metadata": [
+    {
+      "text": "## **Why Study Graphs?**\n\n\u25ee Lots of problems formulated and solved in terms of graphs\n\n- Shortest path problems\n- Network flow problems\n- Matching problems\n- 2-SAT problem\n- Graph coloring problem\n- Traveling Salesman Problem (TSP): still unsolved!\n- and many more...",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Graphs**",
+          "**Why Study Graphs?**"
+        ],
+        "chunk_index_original_split": 2,
+        "estimated_char_length": 267,
+        "estimated_word_count": 44,
+        "final_chunk_index": 2,
+        "document_id": "doc_24946094-dd7f-421d-9936-f0900d382baf_Graph Algorithms",
+        "session_id": "24946094-dd7f-421d-9936-f0900d382baf"
+      }
+    },
+    {
+      "text": "## **Graph Traversal**\n\n- \u25ee The most basic graph algorithm that visits nodes of a graph in certain order\n- \u25ee Used as a subroutine in many other algorithms\n\n- \u25ee We will cover two algorithms\n\t- Depth-First Search (DFS): uses recursion (stack)\n\t- Breadth-First Search (BFS): uses queue",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Graph Traversal**"
+        ],
+        "chunk_index_original_split": 15,
+        "estimated_char_length": 282,
+        "estimated_word_count": 49,
+        "final_chunk_index": 15,
+        "document_id": "doc_24946094-dd7f-421d-9936-f0900d382baf_Graph Algorithms",
+        "session_id": "24946094-dd7f-421d-9936-f0900d382baf"
+      }
+    },
+    {
+      "text": "## **Implementing Adjacency List**\n\n- \u25ee Solution 1. Using linked lists\n\t- Too much memory/time overhead\n\t- Using dynamic allocated memory or pointers is bad\n- \u25ee Solution 2. Using an array of vectors\n\t- Easier to code, no bad memory issues\n\t- But very slow\n- \u25ee Solution 3. Using arrays (!)\n\t- Assuming the total number of edges is known\n\t- Very fast and memory-efficient",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Implementing Adjacency List**"
+        ],
+        "chunk_index_original_split": 7,
+        "estimated_char_length": 369,
+        "estimated_word_count": 67,
+        "final_chunk_index": 7,
+        "document_id": "doc_24946094-dd7f-421d-9936-f0900d382baf_Graph Algorithms",
+        "session_id": "24946094-dd7f-421d-9936-f0900d382baf"
+      }
+    }
+  ],
+  "answerability_context_snippets_metadata": [
+    {
+      "text": "## **Graph Traversal**\n\n- \u25ee The most basic graph algorithm that visits nodes of a graph in certain order\n- \u25ee Used as a subroutine in many other algorithms\n\n- \u25ee We will cover two algorithms\n\t- Depth-First Search (DFS): uses recursion (stack)\n\t- Breadth-First Search (BFS): uses queue",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Graph Traversal**"
+        ],
+        "chunk_index_original_split": 15,
+        "estimated_char_length": 282,
+        "estimated_word_count": 49,
+        "final_chunk_index": 15,
+        "document_id": "doc_24946094-dd7f-421d-9936-f0900d382baf_Graph Algorithms",
+        "session_id": "24946094-dd7f-421d-9936-f0900d382baf"
+      }
+    },
+    {
+      "text": "## **Why Study Graphs?**\n\n\u25ee Lots of problems formulated and solved in terms of graphs\n\n- Shortest path problems\n- Network flow problems\n- Matching problems\n- 2-SAT problem\n- Graph coloring problem\n- Traveling Salesman Problem (TSP): still unsolved!\n- and many more...",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Graphs**",
+          "**Why Study Graphs?**"
+        ],
+        "chunk_index_original_split": 2,
+        "estimated_char_length": 267,
+        "estimated_word_count": 44,
+        "final_chunk_index": 2,
+        "document_id": "doc_24946094-dd7f-421d-9936-f0900d382baf_Graph Algorithms",
+        "session_id": "24946094-dd7f-421d-9936-f0900d382baf"
+      }
+    },
+    {
+      "text": "## **Breadth-First Search**\n\nBFS(*v*): visits all the nodes reachable from *v* in breadth-first order\n\n- \u25ee Initialize a queue *Q*\n- \u25ee Mark *v* as visited and push it to *Q*\n- \u25ee While *Q* is not empty:\n\t- Take the front element of *Q* and call it *w*\n\t- For each edge *w* \u2192 *u*:\n\t\t- \u25ee If *u* is not visited, mark it as visited and push it to *Q*",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Breadth-First Search**"
+        ],
+        "chunk_index_original_split": 17,
+        "estimated_char_length": 344,
+        "estimated_word_count": 72,
+        "final_chunk_index": 17,
+        "document_id": "doc_24946094-dd7f-421d-9936-f0900d382baf_Graph Algorithms",
+        "session_id": "24946094-dd7f-421d-9936-f0900d382baf"
+      }
+    },
+    {
+      "text": "## **Depth-First Search**\n\nDFS(*v*): visits all the nodes reachable from *v* in depth-first order\n\n- \u25ee Mark *v* as visited\n- \u25ee For each edge *v* \u2192 *u*:\n\t- If *u* is not visited, call DFS(*u*)\n\n- \u25ee Use non-recursive version if recursion depth is too big (over a few thousands)\n\t- Replace recursive calls with a stack",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Depth-First Search**"
+        ],
+        "chunk_index_original_split": 16,
+        "estimated_char_length": 315,
+        "estimated_word_count": 58,
+        "final_chunk_index": 16,
+        "document_id": "doc_24946094-dd7f-421d-9936-f0900d382baf_Graph Algorithms",
+        "session_id": "24946094-dd7f-421d-9936-f0900d382baf"
+      }
+    },
+    {
+      "text": "## **Implementing Adjacency List**\n\n- \u25ee Solution 1. Using linked lists\n\t- Too much memory/time overhead\n\t- Using dynamic allocated memory or pointers is bad\n- \u25ee Solution 2. Using an array of vectors\n\t- Easier to code, no bad memory issues\n\t- But very slow\n- \u25ee Solution 3. Using arrays (!)\n\t- Assuming the total number of edges is known\n\t- Very fast and memory-efficient",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Implementing Adjacency List**"
+        ],
+        "chunk_index_original_split": 7,
+        "estimated_char_length": 369,
+        "estimated_word_count": 67,
+        "final_chunk_index": 7,
+        "document_id": "doc_24946094-dd7f-421d-9936-f0900d382baf_Graph Algorithms",
+        "session_id": "24946094-dd7f-421d-9936-f0900d382baf"
+      }
+    }
+  ],
+  "processed_markdown_path_relative": "job_data\\24946094-dd7f-421d-9936-f0900d382baf\\24946094-dd7f-421d-9936-f0900d382baf_Graph Algorithms_processed.md",
+  "processed_markdown_filename_on_server": "24946094-dd7f-421d-9936-f0900d382baf_Graph Algorithms_processed.md"
+}

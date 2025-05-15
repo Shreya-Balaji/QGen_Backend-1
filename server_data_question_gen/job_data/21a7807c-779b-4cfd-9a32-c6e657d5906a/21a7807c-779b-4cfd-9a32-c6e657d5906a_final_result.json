@@ -1,0 +1,165 @@
+{
+  "job_id": "21a7807c-779b-4cfd-9a32-c6e657d5906a",
+  "original_filename": "Graph Algorithms.pdf",
+  "parameters": {
+    "academic_level": "Undergraduate",
+    "major": "Computer Science",
+    "course_name": "Data Structures and Algorithms",
+    "taxonomy_level": "Analyze",
+    "topics_list": "Breadth First Search, Shortest path",
+    "retrieval_limit_generation": 15,
+    "similarity_threshold_generation": 0.5,
+    "generate_diagrams": false
+  },
+  "generated_question": "A social network can be modeled as a graph where nodes represent users and edges represent connections.  Analyze how Breadth-First Search (BFS) could be used to identify all users within a specific distance (number of connections) from a given user.  Contrast this approach with using Dijkstra's algorithm for the same task, considering the implications of assigning weights to the edges (e.g., representing the strength of a connection).  Discuss the computational complexities of both methods and their suitability for this application, justifying your conclusions.",
+  "evaluation_metrics": {
+    "qsts_score": 0.5118080973625183,
+    "qualitative_metrics": {
+      "Understandable": true,
+      "TopicRelated": true,
+      "Grammatical": true,
+      "Clear": true,
+      "Central": true
+    },
+    "llm_answerability": {
+      "is_answerable": false,
+      "reasoning": "The provided context gives a basic definition of BFS and mentions Dijkstra's algorithm in passing within a list of graph problems.  However, it lacks crucial details necessary for an undergraduate Computer Science student to analyze and contrast these algorithms in the context of social network analysis, particularly regarding computational complexity and the impact of weighted edges (representing connection strength).  The snippets describe graphs and BFS but don't provide the depth of information required for a Bloom's 'Analyze' level response.  The student would need more information on Dijkstra's algorithm, its computational complexity (e.g., using a priority queue), and a comparison of the complexities of both algorithms in the context of weighted vs. unweighted graphs. The figures are not helpful in addressing this question."
+    },
+    "generation_status_message": "Failed to meet all critical criteria after 3 attempts. Displaying last attempt's results."
+  },
+  "generation_context_snippets_metadata": [
+    {
+      "text": "## **Graph Traversal**\n\n- \u25ee The most basic graph algorithm that visits nodes of a graph in certain order\n- \u25ee Used as a subroutine in many other algorithms\n\n- \u25ee We will cover two algorithms\n\t- Depth-First Search (DFS): uses recursion (stack)\n\t- Breadth-First Search (BFS): uses queue",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Graph Traversal**"
+        ],
+        "chunk_index_original_split": 15,
+        "estimated_char_length": 282,
+        "estimated_word_count": 49,
+        "final_chunk_index": 15,
+        "document_id": "doc_21a7807c-779b-4cfd-9a32-c6e657d5906a_Graph Algorithms",
+        "session_id": "21a7807c-779b-4cfd-9a32-c6e657d5906a"
+      }
+    },
+    {
+      "text": "## **Breadth-First Search**\n\nBFS(*v*): visits all the nodes reachable from *v* in breadth-first order\n\n- \u25ee Initialize a queue *Q*\n- \u25ee Mark *v* as visited and push it to *Q*\n- \u25ee While *Q* is not empty:\n\t- Take the front element of *Q* and call it *w*\n\t- For each edge *w* \u2192 *u*:\n\t\t- \u25ee If *u* is not visited, mark it as visited and push it to *Q*",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Breadth-First Search**"
+        ],
+        "chunk_index_original_split": 17,
+        "estimated_char_length": 344,
+        "estimated_word_count": 72,
+        "final_chunk_index": 17,
+        "document_id": "doc_21a7807c-779b-4cfd-9a32-c6e657d5906a_Graph Algorithms",
+        "session_id": "21a7807c-779b-4cfd-9a32-c6e657d5906a"
+      }
+    },
+    {
+      "text": "## **Why Study Graphs?**\n\n\u25ee Lots of problems formulated and solved in terms of graphs\n\n- Shortest path problems\n- Network flow problems\n- Matching problems\n- 2-SAT problem\n- Graph coloring problem\n- Traveling Salesman Problem (TSP): still unsolved!\n- and many more...",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Graphs**",
+          "**Why Study Graphs?**"
+        ],
+        "chunk_index_original_split": 2,
+        "estimated_char_length": 267,
+        "estimated_word_count": 44,
+        "final_chunk_index": 2,
+        "document_id": "doc_21a7807c-779b-4cfd-9a32-c6e657d5906a_Graph Algorithms",
+        "session_id": "21a7807c-779b-4cfd-9a32-c6e657d5906a"
+      }
+    }
+  ],
+  "answerability_context_snippets_metadata": [
+    {
+      "text": "# **Graphs**\n\n- \u25ee An abstract way of representing connectivity using nodes (also called vertices) and edges\n- \u25ee We will label the nodes from 1 to *n*\n- \u25ee *m* edges connect some pairs of nodes\n\t- Edges can be either one-directional (directed) or bidirectional\n- \u25ee Nodes and edges can have some auxiliary information\n\n\n---",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Graphs**"
+        ],
+        "chunk_index_original_split": 0,
+        "estimated_char_length": 320,
+        "estimated_word_count": 57,
+        "final_chunk_index": 0,
+        "document_id": "doc_21a7807c-779b-4cfd-9a32-c6e657d5906a_Graph Algorithms",
+        "session_id": "21a7807c-779b-4cfd-9a32-c6e657d5906a"
+      }
+    },
+    {
+      "text": "### Figure 5\n\n**Original Image Reference in Document:** `1__page_20_Picture_5.jpeg` (Alt: ``)\n\n**Figure Description (Generated by Moondream):**\nThe figure depicts a directed graph with nodes representing integers from 1 to 7. Arrows connect the nodes, indicating edges or relationships between them. The graph exhibits a clear pattern of connections, with nodes 2, 4, and 7 forming a triangular cluster, while nodes 1, 3, and 5 are more dispersed. The number of edges connecting each pair of nodes ranges from 2 to 7. The overall structure suggests a hierarchical or relational network, with node 2 serving as a central hub.\n---",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Topological Sort**",
+          "Figure 5"
+        ],
+        "chunk_index_original_split": 20,
+        "estimated_char_length": 628,
+        "estimated_word_count": 99,
+        "final_chunk_index": 20,
+        "document_id": "doc_21a7807c-779b-4cfd-9a32-c6e657d5906a_Graph Algorithms",
+        "session_id": "21a7807c-779b-4cfd-9a32-c6e657d5906a"
+      }
+    },
+    {
+      "text": "## **Breadth-First Search**\n\nBFS(*v*): visits all the nodes reachable from *v* in breadth-first order\n\n- \u25ee Initialize a queue *Q*\n- \u25ee Mark *v* as visited and push it to *Q*\n- \u25ee While *Q* is not empty:\n\t- Take the front element of *Q* and call it *w*\n\t- For each edge *w* \u2192 *u*:\n\t\t- \u25ee If *u* is not visited, mark it as visited and push it to *Q*",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Breadth-First Search**"
+        ],
+        "chunk_index_original_split": 17,
+        "estimated_char_length": 344,
+        "estimated_word_count": 72,
+        "final_chunk_index": 17,
+        "document_id": "doc_21a7807c-779b-4cfd-9a32-c6e657d5906a_Graph Algorithms",
+        "session_id": "21a7807c-779b-4cfd-9a32-c6e657d5906a"
+      }
+    },
+    {
+      "text": "## **Why Study Graphs?**\n\n\u25ee Lots of problems formulated and solved in terms of graphs\n\n- Shortest path problems\n- Network flow problems\n- Matching problems\n- 2-SAT problem\n- Graph coloring problem\n- Traveling Salesman Problem (TSP): still unsolved!\n- and many more...",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Graphs**",
+          "**Why Study Graphs?**"
+        ],
+        "chunk_index_original_split": 2,
+        "estimated_char_length": 267,
+        "estimated_word_count": 44,
+        "final_chunk_index": 2,
+        "document_id": "doc_21a7807c-779b-4cfd-9a32-c6e657d5906a_Graph Algorithms",
+        "session_id": "21a7807c-779b-4cfd-9a32-c6e657d5906a"
+      }
+    },
+    {
+      "text": "### Figure 2\n\n**Original Image Reference in Document:** `_page_7_Picture_5.jpeg` (Alt: ``)\n\n**Figure Description (Generated by Moondream):**\nThe figure depicts a network graph with nodes numbered 1, 2, 3, 4, and 5. Node 1 is connected to nodes 2 and 3, while node 2 is connected to nodes 1 and 4. Node 3 is connected to nodes 1 and 4. Node 4 is connected to nodes 2 and 3. The graph shows a triangular structure with nodes 1, 2, and 3 forming the apex, and nodes 4, 5, and 2 forming the base. The connections between nodes are represented by arrows, indicating relationships or interactions. The graph also includes a trend of increasing values from node 1 to node 4, with node 2 and 3 having intermediate values.\n---\n\n\n| From |   | To |   |\n|------|---|----|---|\n| 1    | 2 | 3  | 5 |\n| 2    | 3 | 5  |   |\n| 3    | 2 |    |   |\n| 4    | 2 | 5  |   |\n| 5    |   |    |   |",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Adjacency List**",
+          "Figure 2"
+        ],
+        "chunk_index_original_split": 6,
+        "estimated_char_length": 873,
+        "estimated_word_count": 174,
+        "final_chunk_index": 6,
+        "document_id": "doc_21a7807c-779b-4cfd-9a32-c6e657d5906a_Graph Algorithms",
+        "session_id": "21a7807c-779b-4cfd-9a32-c6e657d5906a"
+      }
+    }
+  ],
+  "processed_markdown_path_relative": "job_data\\21a7807c-779b-4cfd-9a32-c6e657d5906a\\21a7807c-779b-4cfd-9a32-c6e657d5906a_Graph Algorithms_processed.md",
+  "processed_markdown_filename_on_server": "21a7807c-779b-4cfd-9a32-c6e657d5906a_Graph Algorithms_processed.md"
+}

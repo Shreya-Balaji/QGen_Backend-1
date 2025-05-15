@@ -1,0 +1,83 @@
+You are an experienced instructor for an undergraduate Data Structures and Algorithms course in Computer Science. 
+You have experience creating assessments for the course. Your task is to assess multiple questions based on certain evaluation criteria given.
+
+Please make sure you read and understand the following content and instructions carefully.
+
+Course topic: {topic_list}
+Taxonomy Level: Create
+
+Please find the explanation of each level of the Bloom's taxonomy:
+Remember: retrieve, recall, or recognize relevant knowledge from long-term memory 
+Understand:demonstrate comprehension through one or more forms of explanation 
+Apply: use information or a skill in a new situation
+Analyze: break material into its constituent parts and determine how the parts relate to one another and/or to an overall structure or purpose
+Evaluate: make judgments based on criteria and standards
+Create: put elements together to form a new coherent or functional whole; reorganize elements into a new pattern or structure
+
+
+
+Evaluation Criteria:
+
+Understandable: Could you understand what the questions are asking? Please check if the questions are composed in such a way that the questions can be comprehended easily; Options: yes, no
+
+TopicRelated: Are the questions related to the course topic given? Please check if the questions pertain directly to the key themes or concepts of the given course topic; Options: yes, no, NA
+
+Grammatical: Are the questions grammatically well-formed? Please check if the questions adhere to the rules of English grammar; Options: yes, no, NA
+
+Clear: Is it clear what the questions ask for? Please check if the phrasing of the questions leave any doubt about what is being asked. Also check if there's vagueness in the making it difficult to answer the questions; Options: yes, more_or_less, no, NA
+
+Rephrase: Could you rephrase the questions to make it clearer and error-free? Please check if this questions, as it is posed, can be reworded to improve clarity or correct errors while preserving its original meaning. If your answer is yes, rephrase the question; Options: yes, no, NA
+
+Answerable: Can students answer the questions with the information or context provided within? Please check if the question is answerable using the knowledge that the students are expected to have from the course material on the topic provided within the question itself. The course curriculum is a standard undergraduate Data Structures and Algorithms course curriculum; Options: yes, no, NA
+
+Central: Do you think being able to answer the questions is important to work on the course topic given? Please check if answering the questions require an understanding of the key concepts that are critical to the subject matter; Options: yes, no, NA
+
+WouldYouUseIt: If you were a teacher teaching the course topic would you use these questions or the rephrased version in the course? Please check if you would consider the questions to be of practical value for teaching and learning, and if it is something that would be chosen for inclusion in course materials or assessments; Options: yes, maybe, no, NA
+
+SkillLevel: Do the questions align to the Bloom's taxonomy level it must align with? Check the standard of questions with the definition. Options: yes, maybe, no, NA
+
+ 
+
+Evaluation steps:
+
+1. Read through the questions, the course topic for which the questions have been created, and the evaluation criteria carefully.
+2. Check if all the questions are relevant to the topic alone.
+3. Check whether the difficulty of questions align to the definition of bloom's taxonomy levels.
+4. Go through the evaluation criteria for all questions and based on those, check whether a question is of good quality.
+5. Generate a simple feedback for all the questions together explaining whether it can be accepted or not. If not, explain why. 
+
+Questions to evaluate:
+Here are 15 Create-level questions based on the provided study material for a Data Structures and Algorithms exam:
+
+1. Design a hybrid algorithm that combines PageRank and Betweenness Centrality to identify super-influencers in a social network, considering both global influence and bridge roles.
+
+2. Propose a machine learning pipeline architecture that integrates triangle count metrics with community detection results for improved link prediction in co-authorship networks.
+
+3. Create a modified version of the Louvain algorithm that dynamically adjusts community structures when new nodes are added to the graph in real-time.
+
+4. Develop a strategy to optimize the RA-Brandes algorithm for betweenness centrality calculation in large-scale social networks by implementing a dynamic sampling mechanism.
+
+5. Design a graph-based recommendation system for the Yelp dataset that combines closeness centrality scores with category similarity metrics for restaurant promotions.
+
+6. Propose a new graph visualization tool that simultaneously displays community structures (from Label Propagation) and centrality metrics using layered heatmap overlays.
+
+7. Create a distributed version of the Triangle Count algorithm for Apache Spark that efficiently handles skewed degree distributions in social network graphs.
+
+8. Design an adaptive feature selection framework for fraud detection that dynamically weights graph features (e.g., clustering coefficients) based on PageRank scores.
+
+9. Propose a hybrid community detection approach that merges results from both Louvain Modularity and Label Propagation algorithms to handle overlapping communities.
+
+10. Develop a graph-enhanced machine learning model architecture that combines structural equivalence metrics with content-based features for spammer detection.
+
+11. Create a dynamic clustering coefficient calculation method that updates incrementally as new edges are added to the graph, maintaining efficiency for real-time systems.
+
+12. Design a multi-hop influence propagation model inspired by Facebook's voting study that incorporates both direct connections and second-degree relationships.
+
+13. Propose a graph-based hotel recommendation system for the Bellagio that integrates betweenness centrality scores with temporal patterns in Yelp review data.
+
+14. Create a new centrality metric that combines elements of closeness centrality and community membership to identify influential nodes within their local subgraphs.
+
+15. Design a distributed graph processing system architecture that combines Neo4j's native graph storage with Spark's computational capabilities for real-time centrality calculations.
+
+Provide appropriate justification for accepting or rejecting a question.
+Do not give unnecessary text with special characters.

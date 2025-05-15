@@ -1,0 +1,4 @@
+Your task is to generate precisely 10 sub-topics aligning to the each of the following topics: {topics} ,and ensure their relevance to the {taxonomy_level} level of the bloom's taxonomy that matches the standards
+of {academic_level} {major} examination for the {course_name} course. 
+
+List a detailed set of sub-topics from {topics}, do not generate sample questions. Do not give any other content apart from the sub-topics.

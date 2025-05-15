@@ -1,0 +1,212 @@
+{
+  "job_id": "400b35bc-ba6e-4347-80a0-515161b683e8",
+  "original_filename": "Graph Algorithms.pdf",
+  "parameters": {
+    "academic_level": "Undergraduate",
+    "major": "Computer Science",
+    "course_name": "Data Structures and Algorithms",
+    "taxonomy_level": "Create",
+    "topics_list": "Breadth First Search, Shortest path",
+    "retrieval_limit_generation": 15,
+    "similarity_threshold_generation": 0.5,
+    "generate_diagrams": false
+  },
+  "generated_question": "Design a distributed algorithm for finding the shortest path in a large graph that is partitioned across multiple machines.  Each machine holds a portion of the graph.  Your algorithm should use a modified Breadth-First Search approach and minimize communication overhead between machines. Describe the algorithm, including data structures, communication protocols, and pseudocode for each machine's operation. Analyze the algorithm's scalability and its performance compared to a centralized shortest path algorithm.",
+  "evaluation_metrics": {
+    "qsts_score": 0.6192489862442017,
+    "qualitative_metrics": {
+      "Understandable": true,
+      "TopicRelated": true,
+      "Grammatical": true,
+      "Clear": true,
+      "Central": false
+    },
+    "llm_answerability": {
+      "is_answerable": false,
+      "reasoning": "The provided context snippets offer basic definitions and descriptions of graph traversal algorithms like BFS and DFS, along with implementation details for adjacency lists.  However, they lack the information necessary for a Computer Science undergraduate to design a distributed algorithm for finding the shortest path in a large, partitioned graph. The question requires knowledge of distributed systems, communication protocols, and algorithm design at a level far beyond what these snippets provide.  The snippets focus on fundamental graph concepts, not the complexities of distributed computing needed to answer the 'Create' level question."
+    },
+    "generation_status_message": "Failed to meet all critical criteria after 3 attempts. Displaying last attempt's results."
+  },
+  "generation_context_snippets_metadata": [
+    {
+      "text": "## **Graph Traversal**\n\n- \u25ee The most basic graph algorithm that visits nodes of a graph in certain order\n- \u25ee Used as a subroutine in many other algorithms\n\n- \u25ee We will cover two algorithms\n\t- Depth-First Search (DFS): uses recursion (stack)\n\t- Breadth-First Search (BFS): uses queue",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Graph Traversal**"
+        ],
+        "chunk_index_original_split": 15,
+        "estimated_char_length": 282,
+        "estimated_word_count": 49,
+        "final_chunk_index": 15,
+        "document_id": "doc_400b35bc-ba6e-4347-80a0-515161b683e8_Graph Algorithms",
+        "session_id": "400b35bc-ba6e-4347-80a0-515161b683e8"
+      }
+    },
+    {
+      "text": "## **Breadth-First Search**\n\nBFS(*v*): visits all the nodes reachable from *v* in breadth-first order\n\n- \u25ee Initialize a queue *Q*\n- \u25ee Mark *v* as visited and push it to *Q*\n- \u25ee While *Q* is not empty:\n\t- Take the front element of *Q* and call it *w*\n\t- For each edge *w* \u2192 *u*:\n\t\t- \u25ee If *u* is not visited, mark it as visited and push it to *Q*",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Breadth-First Search**"
+        ],
+        "chunk_index_original_split": 17,
+        "estimated_char_length": 344,
+        "estimated_word_count": 72,
+        "final_chunk_index": 17,
+        "document_id": "doc_400b35bc-ba6e-4347-80a0-515161b683e8_Graph Algorithms",
+        "session_id": "400b35bc-ba6e-4347-80a0-515161b683e8"
+      }
+    },
+    {
+      "text": "## **Implementing Adjacency List**\n\n- \u25ee Solution 1. Using linked lists\n\t- Too much memory/time overhead\n\t- Using dynamic allocated memory or pointers is bad\n- \u25ee Solution 2. Using an array of vectors\n\t- Easier to code, no bad memory issues\n\t- But very slow\n- \u25ee Solution 3. Using arrays (!)\n\t- Assuming the total number of edges is known\n\t- Very fast and memory-efficient",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Implementing Adjacency List**"
+        ],
+        "chunk_index_original_split": 7,
+        "estimated_char_length": 369,
+        "estimated_word_count": 67,
+        "final_chunk_index": 7,
+        "document_id": "doc_400b35bc-ba6e-4347-80a0-515161b683e8_Graph Algorithms",
+        "session_id": "400b35bc-ba6e-4347-80a0-515161b683e8"
+      }
+    },
+    {
+      "text": "## **Why Study Graphs?**\n\n\u25ee Lots of problems formulated and solved in terms of graphs\n\n- Shortest path problems\n- Network flow problems\n- Matching problems\n- 2-SAT problem\n- Graph coloring problem\n- Traveling Salesman Problem (TSP): still unsolved!\n- and many more...",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Graphs**",
+          "**Why Study Graphs?**"
+        ],
+        "chunk_index_original_split": 2,
+        "estimated_char_length": 267,
+        "estimated_word_count": 44,
+        "final_chunk_index": 2,
+        "document_id": "doc_400b35bc-ba6e-4347-80a0-515161b683e8_Graph Algorithms",
+        "session_id": "400b35bc-ba6e-4347-80a0-515161b683e8"
+      }
+    },
+    {
+      "text": "## **Kosaraju's Algorithm**\n\n- \u25ee We won't prove why this works\n- \u25ee Two graph traversals are performed\n\t- Running time: \u0398(*n* + *m*)\n\n- \u25ee Other SCC algorithms exist but this one is particularly easy to code\n\t- and asymptotically optimal\n\n[Strongly Connected Components \\(SCC\\)](#page-34-0) 38",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Kosaraju's Algorithm**"
+        ],
+        "chunk_index_original_split": 38,
+        "estimated_char_length": 291,
+        "estimated_word_count": 47,
+        "final_chunk_index": 38,
+        "document_id": "doc_400b35bc-ba6e-4347-80a0-515161b683e8_Graph Algorithms",
+        "session_id": "400b35bc-ba6e-4347-80a0-515161b683e8"
+      }
+    },
+    {
+      "text": "## **Depth-First Search**\n\nDFS(*v*): visits all the nodes reachable from *v* in depth-first order\n\n- \u25ee Mark *v* as visited\n- \u25ee For each edge *v* \u2192 *u*:\n\t- If *u* is not visited, call DFS(*u*)\n\n- \u25ee Use non-recursive version if recursion depth is too big (over a few thousands)\n\t- Replace recursive calls with a stack",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Depth-First Search**"
+        ],
+        "chunk_index_original_split": 16,
+        "estimated_char_length": 315,
+        "estimated_word_count": 58,
+        "final_chunk_index": 16,
+        "document_id": "doc_400b35bc-ba6e-4347-80a0-515161b683e8_Graph Algorithms",
+        "session_id": "400b35bc-ba6e-4347-80a0-515161b683e8"
+      }
+    }
+  ],
+  "answerability_context_snippets_metadata": [
+    {
+      "text": "## **Graph Traversal**\n\n- \u25ee The most basic graph algorithm that visits nodes of a graph in certain order\n- \u25ee Used as a subroutine in many other algorithms\n\n- \u25ee We will cover two algorithms\n\t- Depth-First Search (DFS): uses recursion (stack)\n\t- Breadth-First Search (BFS): uses queue",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Graph Traversal**"
+        ],
+        "chunk_index_original_split": 15,
+        "estimated_char_length": 282,
+        "estimated_word_count": 49,
+        "final_chunk_index": 15,
+        "document_id": "doc_400b35bc-ba6e-4347-80a0-515161b683e8_Graph Algorithms",
+        "session_id": "400b35bc-ba6e-4347-80a0-515161b683e8"
+      }
+    },
+    {
+      "text": "## **Kosaraju's Algorithm**\n\n- \u25ee We won't prove why this works\n- \u25ee Two graph traversals are performed\n\t- Running time: \u0398(*n* + *m*)\n\n- \u25ee Other SCC algorithms exist but this one is particularly easy to code\n\t- and asymptotically optimal\n\n[Strongly Connected Components \\(SCC\\)](#page-34-0) 38",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Kosaraju's Algorithm**"
+        ],
+        "chunk_index_original_split": 38,
+        "estimated_char_length": 291,
+        "estimated_word_count": 47,
+        "final_chunk_index": 38,
+        "document_id": "doc_400b35bc-ba6e-4347-80a0-515161b683e8_Graph Algorithms",
+        "session_id": "400b35bc-ba6e-4347-80a0-515161b683e8"
+      }
+    },
+    {
+      "text": "## **Breadth-First Search**\n\nBFS(*v*): visits all the nodes reachable from *v* in breadth-first order\n\n- \u25ee Initialize a queue *Q*\n- \u25ee Mark *v* as visited and push it to *Q*\n- \u25ee While *Q* is not empty:\n\t- Take the front element of *Q* and call it *w*\n\t- For each edge *w* \u2192 *u*:\n\t\t- \u25ee If *u* is not visited, mark it as visited and push it to *Q*",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Breadth-First Search**"
+        ],
+        "chunk_index_original_split": 17,
+        "estimated_char_length": 344,
+        "estimated_word_count": 72,
+        "final_chunk_index": 17,
+        "document_id": "doc_400b35bc-ba6e-4347-80a0-515161b683e8_Graph Algorithms",
+        "session_id": "400b35bc-ba6e-4347-80a0-515161b683e8"
+      }
+    },
+    {
+      "text": "## **Implementing Adjacency List**\n\n- \u25ee Solution 1. Using linked lists\n\t- Too much memory/time overhead\n\t- Using dynamic allocated memory or pointers is bad\n- \u25ee Solution 2. Using an array of vectors\n\t- Easier to code, no bad memory issues\n\t- But very slow\n- \u25ee Solution 3. Using arrays (!)\n\t- Assuming the total number of edges is known\n\t- Very fast and memory-efficient",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Implementing Adjacency List**"
+        ],
+        "chunk_index_original_split": 7,
+        "estimated_char_length": 369,
+        "estimated_word_count": 67,
+        "final_chunk_index": 7,
+        "document_id": "doc_400b35bc-ba6e-4347-80a0-515161b683e8_Graph Algorithms",
+        "session_id": "400b35bc-ba6e-4347-80a0-515161b683e8"
+      }
+    },
+    {
+      "text": "## **Why Study Graphs?**\n\n\u25ee Lots of problems formulated and solved in terms of graphs\n\n- Shortest path problems\n- Network flow problems\n- Matching problems\n- 2-SAT problem\n- Graph coloring problem\n- Traveling Salesman Problem (TSP): still unsolved!\n- and many more...",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Graphs**",
+          "**Why Study Graphs?**"
+        ],
+        "chunk_index_original_split": 2,
+        "estimated_char_length": 267,
+        "estimated_word_count": 44,
+        "final_chunk_index": 2,
+        "document_id": "doc_400b35bc-ba6e-4347-80a0-515161b683e8_Graph Algorithms",
+        "session_id": "400b35bc-ba6e-4347-80a0-515161b683e8"
+      }
+    }
+  ],
+  "processed_markdown_path_relative": "job_data\\400b35bc-ba6e-4347-80a0-515161b683e8\\400b35bc-ba6e-4347-80a0-515161b683e8_Graph Algorithms_processed.md",
+  "processed_markdown_filename_on_server": "400b35bc-ba6e-4347-80a0-515161b683e8_Graph Algorithms_processed.md"
+}

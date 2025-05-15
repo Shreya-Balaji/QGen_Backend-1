@@ -1,0 +1,214 @@
+{
+  "job_id": "922b10dc-eece-403c-8fa2-2bc6f766dfec",
+  "original_filename": "Graph Algorithms.pdf",
+  "parameters": {
+    "academic_level": "Undergraduate",
+    "major": "Computer Science",
+    "course_name": "Data Structures and Algorithms",
+    "taxonomy_level": "Evaluate",
+    "topics_list": "Breadth First Search, Shortest path, Dijkstr'as",
+    "retrieval_limit_generation": 15,
+    "similarity_threshold_generation": 0.4,
+    "generate_diagrams": false
+  },
+  "generated_question": "Please provide the content and the values for `{num_questions}`, `{taxonomy}`, and `{blooms_taxonomy_descriptions}`.  I need this information to generate the questions.",
+  "evaluation_metrics": {
+    "qsts_score": 0.03741297870874405,
+    "qualitative_metrics": {
+      "Understandable": false,
+      "TopicRelated": false,
+      "Grammatical": true,
+      "Clear": false,
+      "Central": false
+    },
+    "llm_answerability": {
+      "is_answerable": false,
+      "reasoning": "The provided text snippets describe various figures depicting graphs and networks, but they do not contain the values for `{num_questions}`, `{taxonomy}`, and `{blooms_taxonomy_descriptions}`.  The question asks for specific content needed to generate questions, which is not present in the context.  Even a Computer Science undergraduate familiar with graph theory would not be able to answer this question from the given snippets. The Bloom's level of 'Evaluate' is irrelevant because the necessary information is missing entirely."
+    },
+    "generation_status_message": "Failed to meet all critical criteria after 3 attempts. Displaying last attempt's results."
+  },
+  "generation_context_snippets_metadata": [
+    {
+      "text": "## **Graph Traversal**\n\n- \u25ee The most basic graph algorithm that visits nodes of a graph in certain order\n- \u25ee Used as a subroutine in many other algorithms\n\n- \u25ee We will cover two algorithms\n\t- Depth-First Search (DFS): uses recursion (stack)\n\t- Breadth-First Search (BFS): uses queue",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Graph Traversal**"
+        ],
+        "chunk_index_original_split": 15,
+        "estimated_char_length": 282,
+        "estimated_word_count": 49,
+        "final_chunk_index": 15,
+        "document_id": "doc_922b10dc-eece-403c-8fa2-2bc6f766dfec_Graph Algorithms",
+        "session_id": "922b10dc-eece-403c-8fa2-2bc6f766dfec"
+      }
+    },
+    {
+      "text": "## **Why Study Graphs?**\n\n\u25ee Lots of problems formulated and solved in terms of graphs\n\n- Shortest path problems\n- Network flow problems\n- Matching problems\n- 2-SAT problem\n- Graph coloring problem\n- Traveling Salesman Problem (TSP): still unsolved!\n- and many more...",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Graphs**",
+          "**Why Study Graphs?**"
+        ],
+        "chunk_index_original_split": 2,
+        "estimated_char_length": 267,
+        "estimated_word_count": 44,
+        "final_chunk_index": 2,
+        "document_id": "doc_922b10dc-eece-403c-8fa2-2bc6f766dfec_Graph Algorithms",
+        "session_id": "922b10dc-eece-403c-8fa2-2bc6f766dfec"
+      }
+    },
+    {
+      "text": "## **Breadth-First Search**\n\nBFS(*v*): visits all the nodes reachable from *v* in breadth-first order\n\n- \u25ee Initialize a queue *Q*\n- \u25ee Mark *v* as visited and push it to *Q*\n- \u25ee While *Q* is not empty:\n\t- Take the front element of *Q* and call it *w*\n\t- For each edge *w* \u2192 *u*:\n\t\t- \u25ee If *u* is not visited, mark it as visited and push it to *Q*",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Breadth-First Search**"
+        ],
+        "chunk_index_original_split": 17,
+        "estimated_char_length": 344,
+        "estimated_word_count": 72,
+        "final_chunk_index": 17,
+        "document_id": "doc_922b10dc-eece-403c-8fa2-2bc6f766dfec_Graph Algorithms",
+        "session_id": "922b10dc-eece-403c-8fa2-2bc6f766dfec"
+      }
+    },
+    {
+      "text": "## **Implementing Adjacency List**\n\n- \u25ee Solution 1. Using linked lists\n\t- Too much memory/time overhead\n\t- Using dynamic allocated memory or pointers is bad\n- \u25ee Solution 2. Using an array of vectors\n\t- Easier to code, no bad memory issues\n\t- But very slow\n- \u25ee Solution 3. Using arrays (!)\n\t- Assuming the total number of edges is known\n\t- Very fast and memory-efficient",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Implementing Adjacency List**"
+        ],
+        "chunk_index_original_split": 7,
+        "estimated_char_length": 369,
+        "estimated_word_count": 67,
+        "final_chunk_index": 7,
+        "document_id": "doc_922b10dc-eece-403c-8fa2-2bc6f766dfec_Graph Algorithms",
+        "session_id": "922b10dc-eece-403c-8fa2-2bc6f766dfec"
+      }
+    },
+    {
+      "text": "## **Kosaraju's Algorithm**\n\n- \u25ee We won't prove why this works\n- \u25ee Two graph traversals are performed\n\t- Running time: \u0398(*n* + *m*)\n\n- \u25ee Other SCC algorithms exist but this one is particularly easy to code\n\t- and asymptotically optimal\n\n[Strongly Connected Components \\(SCC\\)](#page-34-0) 38",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Kosaraju's Algorithm**"
+        ],
+        "chunk_index_original_split": 38,
+        "estimated_char_length": 291,
+        "estimated_word_count": 47,
+        "final_chunk_index": 38,
+        "document_id": "doc_922b10dc-eece-403c-8fa2-2bc6f766dfec_Graph Algorithms",
+        "session_id": "922b10dc-eece-403c-8fa2-2bc6f766dfec"
+      }
+    },
+    {
+      "text": "## **Depth-First Search**\n\nDFS(*v*): visits all the nodes reachable from *v* in depth-first order\n\n- \u25ee Mark *v* as visited\n- \u25ee For each edge *v* \u2192 *u*:\n\t- If *u* is not visited, call DFS(*u*)\n\n- \u25ee Use non-recursive version if recursion depth is too big (over a few thousands)\n\t- Replace recursive calls with a stack",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Depth-First Search**"
+        ],
+        "chunk_index_original_split": 16,
+        "estimated_char_length": 315,
+        "estimated_word_count": 58,
+        "final_chunk_index": 16,
+        "document_id": "doc_922b10dc-eece-403c-8fa2-2bc6f766dfec_Graph Algorithms",
+        "session_id": "922b10dc-eece-403c-8fa2-2bc6f766dfec"
+      }
+    }
+  ],
+  "answerability_context_snippets_metadata": [
+    {
+      "text": "### Figure 1\n\n**Original Image Reference in Document:** `_page_2_Picture_6.jpeg` (Alt: ``)\n\n**Figure Description (Generated by Moondream):**\nThe figure shows a network structure with six nodes, each connected to four other nodes. The connections are represented by lines, and the nodes are numbered from 1 to 6. The overall pattern suggests a hierarchical or organizational relationship, with each node serving as a central hub. The numerical values indicate a sequence or order, possibly related to a classification or categorization system.\n---",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Graphs**",
+          "Figure 1"
+        ],
+        "chunk_index_original_split": 1,
+        "estimated_char_length": 546,
+        "estimated_word_count": 80,
+        "final_chunk_index": 1,
+        "document_id": "doc_922b10dc-eece-403c-8fa2-2bc6f766dfec_Graph Algorithms",
+        "session_id": "922b10dc-eece-403c-8fa2-2bc6f766dfec"
+      }
+    },
+    {
+      "text": "### Figure 4\n\n**Original Image Reference in Document:** `0__page_14_Picture_4.jpeg` (Alt: ``)\n\n**Figure Description (Generated by Moondream):**\nThis figure presents a special graph, likely illustrating a specific relationship or trend. The graph displays numerical values, suggesting a quantitative analysis. The visualizations appear to show a clear pattern or correlation, although the exact nature of the relationship is not explicitly stated.\n---",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Other Special Graphs**",
+          "Figure 4"
+        ],
+        "chunk_index_original_split": 13,
+        "estimated_char_length": 450,
+        "estimated_word_count": 60,
+        "final_chunk_index": 13,
+        "document_id": "doc_922b10dc-eece-403c-8fa2-2bc6f766dfec_Graph Algorithms",
+        "session_id": "922b10dc-eece-403c-8fa2-2bc6f766dfec"
+      }
+    },
+    {
+      "text": "### Figure 6\n\n**Original Image Reference in Document:** `2__page_35_Picture_5.jpeg` (Alt: ``)\n\n**Figure Description (Generated by Moondream):**\nThis figure visually represents a directed graph, showing connections between nodes labeled 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', and 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'. The graph is composed of nodes enclosed in circles, with arrows indicating directed edges. The nodes are arranged in a grid-like structure, with some nodes forming a larger, irregular shape. The connections between nodes are represented by lines, and the edges are represented by arrows. The graph appears to be a representation of a network or relationship between different entities. The key technical findings are the presence of directed edges, the use of nodes and labels, and the overall structure of the graph.\n---\n\n\n[Strongly Connected Components \\(SCC\\)](#page-34-0) 36",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Strongly Connected Components (SCC)**",
+          "Figure 6"
+        ],
+        "chunk_index_original_split": 36,
+        "estimated_char_length": 898,
+        "estimated_word_count": 134,
+        "final_chunk_index": 36,
+        "document_id": "doc_922b10dc-eece-403c-8fa2-2bc6f766dfec_Graph Algorithms",
+        "session_id": "922b10dc-eece-403c-8fa2-2bc6f766dfec"
+      }
+    },
+    {
+      "text": "# **Graphs**\n\n- \u25ee An abstract way of representing connectivity using nodes (also called vertices) and edges\n- \u25ee We will label the nodes from 1 to *n*\n- \u25ee *m* edges connect some pairs of nodes\n\t- Edges can be either one-directional (directed) or bidirectional\n- \u25ee Nodes and edges can have some auxiliary information\n\n\n---",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Graphs**"
+        ],
+        "chunk_index_original_split": 0,
+        "estimated_char_length": 320,
+        "estimated_word_count": 57,
+        "final_chunk_index": 0,
+        "document_id": "doc_922b10dc-eece-403c-8fa2-2bc6f766dfec_Graph Algorithms",
+        "session_id": "922b10dc-eece-403c-8fa2-2bc6f766dfec"
+      }
+    },
+    {
+      "text": "### Figure 2\n\n**Original Image Reference in Document:** `_page_7_Picture_5.jpeg` (Alt: ``)\n\n**Figure Description (Generated by Moondream):**\nThe figure depicts a network graph with nodes numbered 1, 2, 3, 4, and 5. Node 1 is connected to nodes 2 and 3, while node 2 is connected to nodes 1 and 4. Node 3 is connected to nodes 1 and 4. Node 4 is connected to nodes 2 and 3. The graph shows a triangular structure with node 1 at the apex and nodes 2, 3, and 4 forming the sides. The connections between nodes are represented by arrows, indicating relationships or interactions. The graph also includes a diagonal line connecting node 2 and node 3, suggesting a bidirectional relationship. The numerical values associated with the nodes are 1, 2, 3, 4, and 5. Overall, the visualization highlights a structured network with clear relationships and directional connections.\n---\n\n\n| From |   | To |   |\n|------|---|----|---|\n| 1    | 2 | 3  | 5 |\n| 2    | 3 | 5  |   |\n| 3    | 2 |    |   |\n| 4    | 2 | 5  |   |\n| 5    |   |    |   |",
+      "metadata": {
+        "source_file": "Graph Algorithms.pdf",
+        "header_trail": [
+          "**Outline**",
+          "**Adjacency List**",
+          "Figure 2"
+        ],
+        "chunk_index_original_split": 6,
+        "estimated_char_length": 1029,
+        "estimated_word_count": 192,
+        "final_chunk_index": 6,
+        "document_id": "doc_922b10dc-eece-403c-8fa2-2bc6f766dfec_Graph Algorithms",
+        "session_id": "922b10dc-eece-403c-8fa2-2bc6f766dfec"
+      }
+    }
+  ],
+  "processed_markdown_path_relative": "job_data\\922b10dc-eece-403c-8fa2-2bc6f766dfec\\922b10dc-eece-403c-8fa2-2bc6f766dfec_Graph Algorithms_processed.md",
+  "processed_markdown_filename_on_server": "922b10dc-eece-403c-8fa2-2bc6f766dfec_Graph Algorithms_processed.md"
+}

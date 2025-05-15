@@ -1,0 +1,10 @@
+You are an experienced instructor for undergraduate Computer Science students for the course Data Structures and Algorithms.
+Your task is to generate 15 questions aligning to a Create level of the Bloom's taxonomy for the following topics : Breadth First Search, Shortest Path.
+
+Please find the explanation of each level of the Bloom's taxonomy:
+Remember: retrieve, recall, or recognize relevant knowledge from long-term memory 
+Understand:demonstrate comprehension through one or more forms of explanation 
+Apply: use information or a skill in a new situation
+Analyze: break material into its constituent parts and determine how the parts relate to one another and/or to an overall structure or purpose
+Evaluate: make judgments based on criteria and standards
+Create: put elements together to form a new coherent or functional whole; reorganize elements into a new pattern or structure

@@ -639,7 +639,7 @@ def parse_questions_from_llm_response(job_id_for_log: str, question_block: str, 
     logger.info(f"[{job_id_for_log}] Parsed {len(final_questions)} questions. First: {final_questions[0][:100] if final_questions else 'None'}")
     return final_questions
 
-def evaluate_question_qsts(job_id_for_log: str, question: str, context: str) -> float:
+async def evaluate_question_qsts(job_id_for_log: str, question: str, context: str) -> float:
     #global model_st
     logger.info(f"[{job_id_for_log}] Evaluating QSTS for question: {question[:100]}")
     #if not model_st: logger.error(f"[{job_id_for_log}] SentenceTransformer model not initialized for QSTS."); return 0.0
@@ -843,7 +843,7 @@ def process_markdown_api(markdown_text: str, saved_images_map: Dict[str, str], j
     return "\n".join(processed_lines)
 
 # --- Main Background Task Logic ---
-def process_document_and_generate_first_question(
+async def process_document_and_generate_first_question(
     job_id: str, pdf_path_on_disk: Path, original_filename: str,
     params: QuestionGenerationRequest, job_specific_temp_dir: Path
 ):
@@ -886,7 +886,7 @@ def process_document_and_generate_first_question(
         for chunk_data in chunks:
             chunk_data.setdefault('metadata', {})['document_id'] = doc_id_qdrant
             chunk_data['metadata']['session_id'] = job_id
-        embeddings = embed_chunks(chunks, job_id)
+        embeddings = await embed_chunks(chunks, job_id)
         if not embeddings: raise ValueError("Embedding failed.")
         if upsert_to_qdrant(job_id, QDRANT_COLLECTION_NAME, embeddings, chunks) == 0:
             raise ValueError("No points upserted to Qdrant.")

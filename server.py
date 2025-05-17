@@ -638,15 +638,14 @@ def parse_questions_from_llm_response(job_id_for_log: str, question_block: str, 
         if num_expected == 1: final_questions = [question_block.strip()] # Last resort for single Q
     logger.info(f"[{job_id_for_log}] Parsed {len(final_questions)} questions. First: {final_questions[0][:100] if final_questions else 'None'}")
     return final_questions
-
-async def evaluate_question_qsts(job_id_for_log: str, question: str, context: str) -> float:
+def evaluate_question_qsts(job_id_for_log: str, question: str, context: str) -> float:
     #global model_st
     logger.info(f"[{job_id_for_log}] Evaluating QSTS for question: {question[:100]}")
     #if not model_st: logger.error(f"[{job_id_for_log}] SentenceTransformer model not initialized for QSTS."); return 0.0
     if not question or not context: logger.warning(f"[{job_id_for_log}] Empty question or context for QSTS."); return 0.0
     try:
-        q_embed =  await embed_chunks([{"text": clean_text_for_embedding(question, job_id_for_log)}])
-        c_embed = await embed_chunks([{"text":clean_text_for_embedding(context, job_id_for_log)}])
+        q_embed =  embed_chunks([{"text": clean_text_for_embedding(question, job_id_for_log)}])
+        c_embed = embed_chunks([{"text":clean_text_for_embedding(context, job_id_for_log)}])
         score = sbert_util.pytorch_cos_sim(q_embed, c_embed).item()
         logger.info(f"[{job_id_for_log}] QSTS score: {score:.4f}")
         return score
@@ -697,7 +696,7 @@ def evaluate_question_answerability_llm(job_id_for_log: str, question: str, acad
     #if not model_st: return False, "Error: Embedding model not available.", []
     ans_context_metadata = []
     try:
-        question_embedding = await embed_chunks([{"text": clean_text_for_embedding(question, job_id_for_log)}])
+        question_embedding = embed_chunks([{"text": clean_text_for_embedding(question, job_id_for_log)}])
         answer_search_results = search_qdrant(
             job_id_for_log=job_id_for_log, collection_name=QDRANT_COLLECTION_NAME,
             embedded_vector=question_embedding.tolist(), query_text_for_log=f"Answerability search: {question[:50]}",
@@ -843,7 +842,7 @@ def process_markdown_api(markdown_text: str, saved_images_map: Dict[str, str], j
     return "\n".join(processed_lines)
 
 # --- Main Background Task Logic ---
-async def process_document_and_generate_first_question(
+def process_document_and_generate_first_question(
     job_id: str, pdf_path_on_disk: Path, original_filename: str,
     params: QuestionGenerationRequest, job_specific_temp_dir: Path
 ):
@@ -886,7 +885,7 @@ async def process_document_and_generate_first_question(
         for chunk_data in chunks:
             chunk_data.setdefault('metadata', {})['document_id'] = doc_id_qdrant
             chunk_data['metadata']['session_id'] = job_id
-        embeddings = await embed_chunks(chunks, job_id)
+        embeddings = embed_chunks(chunks, job_id)
         if not embeddings: raise ValueError("Embedding failed.")
         if upsert_to_qdrant(job_id, QDRANT_COLLECTION_NAME, embeddings, chunks) == 0:
             raise ValueError("No points upserted to Qdrant.")
@@ -899,7 +898,7 @@ async def process_document_and_generate_first_question(
         )
         if hypo_text.startswith("Error:") or not hypo_text.strip(): raise ValueError(f"Hypothetical text gen failed: {hypo_text}")
         #if not model_st: raise ValueError("Embedding model unavailable for hypothetical text.")
-        query_embed = await embed_chunks([{"text":clean_text_for_embedding(hypo_text, job_id)}]).tolist()
+        query_embed = embed_chunks([{"text":clean_text_for_embedding(hypo_text, job_id)}]).tolist()
 
         job_status_storage[job_id]["message"] = "Retrieving generation context (Qdrant)..."
         gen_results = search_qdrant(

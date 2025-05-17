@@ -12,6 +12,10 @@ import sys
 import shutil
 import urllib.parse
 import json
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from typing import List, Dict
+import httpx
 
 # Text Processing & Embeddings
 from PIL import Image
@@ -30,7 +34,7 @@ except LookupError:
 
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
-from sentence_transformers import SentenceTransformer
+#from sentence_transformers import SentenceTransformer
 from sentence_transformers import util as sbert_util
 
 # Qdrant
@@ -62,7 +66,7 @@ MOONDREAM_API_KEY = os.environ.get("MOONDREAM_API_KEY")
 # --- Initialize Logging ---
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - [%(funcName)s][%(lineno)d] %(message)s')
 logging.getLogger('PIL').setLevel(logging.WARNING) # Reduce PIL logging noise
-logging.getLogger('sentence_transformers').setLevel(logging.WARNING)
+# logging.getLogger('sentence_transformers').setLevel(logging.WARNING)
 logging.getLogger('nltk').setLevel(logging.WARNING)
 logger = logging.getLogger(__name__)
 
@@ -93,7 +97,7 @@ GEMINI_TIMEOUT = 300
 MAX_GEMINI_RETRIES = 3
 GEMINI_RETRY_DELAY = 60
 QDRANT_COLLECTION_NAME = "markdown_docs_v3_semantic_qg"
-EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
+#EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
 VECTOR_SIZE = 384
 GEMINI_MODEL_NAME = "gemini-1.5-flash-latest"
 GEMINI_API_URL_TEMPLATE = "https://generativelanguage.googleapis.com/v1beta/models/{model_name}:{action}?key={api_key}"
@@ -215,7 +219,7 @@ def initialize_models():
 app = FastAPI(title="Interactive Question Generation API")
 initialize_models()
 
-origins = ["https://qgen-frontend-1.vercel.app/","http://localhost:3000", "http://localhost:3001", "https://q-gen-frontend.vercel.app"] # Adjust to your frontend URL
+origins = ["http://localhost:3000", "http://localhost:3001", "https://q-gen-frontend.vercel.app"] # Adjust to your frontend URL
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -473,17 +477,56 @@ def hierarchical_chunk_markdown(markdown_text: str, source_filename: str, job_id
         return [{"text": markdown_text, "metadata": {"source_file": source_filename, "header_trail": ["Full Document"], "final_chunk_index": 0, "estimated_char_length": len(markdown_text), "estimated_word_count": len(markdown_text.split())}}]
     return final_chunks
 
-def embed_chunks(chunks_data: List[Dict], job_id_for_log: str) -> List[List[float]]:
-    global model_st
-    logger.info(f"[{job_id_for_log}] Embedding {len(chunks_data)} chunks.")
-    if not model_st:
-        logger.error(f"[{job_id_for_log}] SentenceTransformer model not initialized.")
-        raise ValueError("SentenceTransformer model not available for embedding.")
+embedding_client_app = FastAPI()
+logger = logging.getLogger("embedding_client")
+logging.basicConfig(level=logging.INFO)
+EMBEDDING_API_URL = "https://embedding-api-uqgd.onrender.com/embed-batch"
+
+# def embed_chunks(chunks_data: List[Dict], job_id_for_log: str) -> List[List[float]]:
+#     global model_st
+#     logger.info(f"[{job_id_for_log}] Embedding {len(chunks_data)} chunks.")
+#     if not model_st:
+#         logger.error(f"[{job_id_for_log}] SentenceTransformer model not initialized.")
+#         raise ValueError("SentenceTransformer model not available for embedding.")
+#     texts_to_embed = [chunk['text'] for chunk in chunks_data]
+#     if not texts_to_embed: return []
+#     embeddings = model_st.encode(texts_to_embed, show_progress_bar=False) # Set show_progress_bar=False for server logs
+#     logger.info(f"[{job_id_for_log}] Finished embedding {len(chunks_data)} chunks.")
+#     return embeddings.tolist()
+
+class Chunk(BaseModel):
+    text: str
+
+class BatchChunksRequest(BaseModel):
+    chunks: List[Chunk]
+
+async def embed_chunks(chunks_data: List[Dict], job_id_for_log: str) -> List[List[float]]:
     texts_to_embed = [chunk['text'] for chunk in chunks_data]
-    if not texts_to_embed: return []
-    embeddings = model_st.encode(texts_to_embed, show_progress_bar=False) # Set show_progress_bar=False for server logs
-    logger.info(f"[{job_id_for_log}] Finished embedding {len(chunks_data)} chunks.")
-    return embeddings.tolist()
+    if not texts_to_embed:
+        return []
+    
+    logger.info(f"[{job_id_for_log}] Sending {len(texts_to_embed)} texts for embedding...")
+    async with httpx.AsyncClient() as client:
+        response = await client.post(EMBEDDING_API_URL, json={"texts": texts_to_embed})
+        response.raise_for_status()
+        data = response.json()
+
+    logger.info(f"[{job_id_for_log}] Received embeddings for {len(texts_to_embed)} texts.")
+    
+    embeddings = data.get("embeddings")
+    if embeddings is None:
+        raise ValueError(f"[{job_id_for_log}] No embeddings returned from external API.")
+    
+    return embeddings
+
+@embedding_client_app.post("/embed-chunks")
+async def embed_chunks_endpoint(req: BatchChunksRequest):
+    try:
+        embeddings = await embed_chunks([chunk.dict() for chunk in req.chunks], job_id_for_log="API_call")
+        return {"embeddings": embeddings}
+    except Exception as e:
+        logger.error(f"Embedding failed: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 def upsert_to_qdrant(job_id_for_log: str, collection_name: str, embeddings: List[List[float]],
                      chunks_data: List[Dict], batch_size: int = 100) -> int:
